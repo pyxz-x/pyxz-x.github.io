@@ -20,20 +20,20 @@
   <title>Django笔记：实现逻辑 - Hexo</title>
 
   
-    <meta name="description" content="一、实现逻辑基于Socket进行实现，在网络编程中，Socket 是一种用于网络通信的基本组件，它允许不同主机之间基于 TCP&#x2F;IP 协议进行数据交换。通过 Socket，应用程序能够实现跨计算机的通信。Socket通信的基本概念：Socket 是网络通信的接口，基于客户端-服务器架构。它通常通过 IP 地址和端口号来识别通信的端点。IP 地址：唯一标识一个设备或主机。端口号：标识主机上">
+    <meta name="description" content="一、实现逻辑基于Socket进行实现，在网络编程中，Socket 是一种用于网络通信的基本组件，它允许不同主机之间基于 TCP&#x2F;IP 协议进行数据交换。通过 Socket，应用程序能够实现跨计算机的通信。Socket通信的基本概念：Socket 是网络通信的接口，基于客户端-服务器架构。它通常通过 IP 地址和端口号来识别通信的端点。  IP 地址：唯一标识一个设备或主机。  端口号：标">
 <meta property="og:type" content="website">
 <meta property="og:title" content="实现逻辑">
 <meta property="og:url" content="https://pyxz-x.github.io/wiki/Django%E7%AC%94%E8%AE%B0/%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、实现逻辑基于Socket进行实现，在网络编程中，Socket 是一种用于网络通信的基本组件，它允许不同主机之间基于 TCP&#x2F;IP 协议进行数据交换。通过 Socket，应用程序能够实现跨计算机的通信。Socket通信的基本概念：Socket 是网络通信的接口，基于客户端-服务器架构。它通常通过 IP 地址和端口号来识别通信的端点。IP 地址：唯一标识一个设备或主机。端口号：标识主机上">
+<meta property="og:description" content="一、实现逻辑基于Socket进行实现，在网络编程中，Socket 是一种用于网络通信的基本组件，它允许不同主机之间基于 TCP&#x2F;IP 协议进行数据交换。通过 Socket，应用程序能够实现跨计算机的通信。Socket通信的基本概念：Socket 是网络通信的接口，基于客户端-服务器架构。它通常通过 IP 地址和端口号来识别通信的端点。  IP 地址：唯一标识一个设备或主机。  端口号：标">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="g:\xz_blog\source\wiki\Django%E7%AC%94%E8%AE%B0\images\1.png">
-<meta property="og:image" content="g:\xz_blog\source\wiki\Django%E7%AC%94%E8%AE%B0\images\2.png">
-<meta property="article:published_time" content="2024-12-17T14:32:39.999Z">
-<meta property="article:modified_time" content="2024-12-17T14:32:39.999Z">
+<meta property="og:image" content="https://pyxz-x.github.io/wiki/Django%E7%AC%94%E8%AE%B0/images/1.png">
+<meta property="og:image" content="https://pyxz-x.github.io/wiki/Django%E7%AC%94%E8%AE%B0/images/2.png">
+<meta property="article:published_time" content="2024-12-17T15:21:40.945Z">
+<meta property="article:modified_time" content="2024-12-17T15:21:40.945Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="g:\xz_blog\source\wiki\Django%E7%AC%94%E8%AE%B0\images\1.png">
+<meta name="twitter:image" content="https://pyxz-x.github.io/wiki/Django%E7%AC%94%E8%AE%B0/images/1.png">
   
   
   
@@ -49,7 +49,7 @@
 
   
 
-  <link rel="stylesheet" href="/static/字体反差/a.css"><link rel="stylesheet" href="/static/代码雨/canvas.css"><link rel="stylesheet" href="/static/站长微信弹出/a.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><link rel="stylesheet" href="/static/音乐/a.css">
+  <link rel="stylesheet" href="/static/字体反差/a.css"><link rel="stylesheet" href="/static/代码雨/canvas.css"><link rel="stylesheet" href="/static/站长微信弹出/a.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><link rel="stylesheet" href="/static/音乐/a.css"><link rel="stylesheet" href="/static/图片放大/a.css">
 </head>
 <body>
 
@@ -85,7 +85,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki">文档</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/Django%E7%AC%94%E8%AE%B0/%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91.html">Django笔记</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2024-12-17T14:32:39.999Z">2024-12-17</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2024-12-17T15:21:40.945Z">2024-12-17</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -96,13 +96,21 @@
     </div>
     
   </div>
-  </div><article class="md-text content"><h1 id="一、实现逻辑"><a href="#一、实现逻辑" class="headerlink" title="一、实现逻辑"></a>一、实现逻辑</h1><p>基于Socket进行实现，在网络编程中，Socket 是一种用于网络通信的基本组件，它允许不同主机之间基于 TCP&#x2F;IP 协议进行数据交换。通过 Socket，应用程序能够实现跨计算机的通信。<br>Socket通信的基本概念：<br>Socket 是网络通信的接口，基于客户端-服务器架构。它通常通过 IP 地址和端口号来识别通信的端点。<br>IP 地址：唯一标识一个设备或主机。<br>端口号：标识主机上的特定应用或服务。<br>通常，Socket 通信涉及 客户端 和 服务器 两个角色。</p>
+  </div><article class="md-text content"><h1 id="一、实现逻辑"><a href="#一、实现逻辑" class="headerlink" title="一、实现逻辑"></a>一、实现逻辑</h1><p>基于Socket进行实现，在网络编程中，Socket 是一种用于网络通信的基本组件，它允许不同主机之间基于 TCP&#x2F;IP 协议进行数据交换。通过 Socket，应用程序能够实现跨计算机的通信。<br>Socket通信的基本概念：<br>Socket 是网络通信的接口，基于客户端-服务器架构。它通常通过 IP 地址和端口号来识别通信的端点。</p>
+<ul>
+<li><p>IP 地址：唯一标识一个设备或主机。</p>
+</li>
+<li><p>端口号：标识主机上的特定应用或服务。</p>
+</li>
+</ul>
+<p>通常，Socket 通信涉及 客户端 和 服务器 两个角色。</p>
 <h1 id="二、服务端、客户端编写"><a href="#二、服务端、客户端编写" class="headerlink" title="二、服务端、客户端编写"></a>二、服务端、客户端编写</h1><h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">-*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">@Time : 2024-11-23 0:37</span></span><br><span class="line"><span class="string">@File : socket1.py</span></span><br><span class="line"><span class="string">@Author : 大漂亮lzh</span></span><br><span class="line"><span class="string">@Project : python代码</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, <span class="number">1</span>)</span><br><span class="line">sock.bind((<span class="string">&#x27;127.0.0.1&#x27;</span>, <span class="number">7890</span>))</span><br><span class="line">sock.listen(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    conn, addr = sock.accept()</span><br><span class="line">    html = <span class="string">&quot;&quot;&quot;&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="string">&lt;html lang=&quot;en&quot;&gt;</span></span><br><span class="line"><span class="string">&lt;head&gt;</span></span><br><span class="line"><span class="string">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span></span><br><span class="line"><span class="string">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span></span><br><span class="line"><span class="string">    &lt;title&gt;简单页面&lt;/title&gt;</span></span><br><span class="line"><span class="string">&lt;/head&gt;</span></span><br><span class="line"><span class="string">&lt;body&gt;</span></span><br><span class="line"><span class="string">    &lt;h1&gt;欢迎来到我的简单页面&lt;/h1&gt;</span></span><br><span class="line"><span class="string">    &lt;p&gt;这是一个简单的HTML页面示例。&lt;/p&gt;</span></span><br><span class="line"><span class="string">    &lt;p&gt;它包含了一个标题和一个段落。&lt;/p&gt;</span></span><br><span class="line"><span class="string">    &lt;a href=&quot;https://www.example.com&quot;&gt;访问示例网站&lt;/a&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;&#x27;&quot;&quot;&quot;</span></span><br><span class="line">    conn.send(html.encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">    massage = conn.recv(<span class="number">1024</span>).decode(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(massage)</span><br><span class="line">    conn.close()</span><br></pre></td></tr></table></figure>
 
 <h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">-*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">@Time : 2024-11-23 0:41</span></span><br><span class="line"><span class="string">@File : socket2.py</span></span><br><span class="line"><span class="string">@Author : 大漂亮lzh</span></span><br><span class="line"><span class="string">@Project : python代码</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">client_socket.connect((<span class="string">&#x27;127.0.0.1&#x27;</span>, <span class="number">7890</span>))</span><br><span class="line">massage = client_socket.recv(<span class="number">1024</span>)</span><br><span class="line"><span class="built_in">print</span>(massage.decode(<span class="string">&#x27;utf-8&#x27;</span>, <span class="string">&#x27;ignore&#x27;</span>))</span><br><span class="line"><span class="keyword">if</span> massage:</span><br><span class="line">    client_socket.send(<span class="string">&#x27;我是Spider 我是你忠实的仆人！！！&#x27;</span>.encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br></pre></td></tr></table></figure>
 
-<h1 id="三、本地运行结果"><a href="#三、本地运行结果" class="headerlink" title="三、本地运行结果"></a>三、本地运行结果</h1><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="G:\xz_blog\source\wiki\Django笔记\images\1.png"></p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="G:\xz_blog\source\wiki\Django笔记\images\2.png"></p>
+<h1 id="三、本地运行结果"><a href="#三、本地运行结果" class="headerlink" title="三、本地运行结果"></a>三、本地运行结果</h1><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="\wiki\Django笔记\images\1.png" data-fancybox="true"/></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="\wiki\Django笔记\images\2.png" data-fancybox="true"/></div></div>
 
 <div class="article-footer fs14">
     <section id="license">
